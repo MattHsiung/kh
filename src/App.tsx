@@ -1,26 +1,85 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { EntryCollection } from "contentful";
+import { DateTime } from "luxon";
+import React, { useEffect, useState } from "react";
+import "./App.css";
+import { BrowserRouter, Route } from "react-router-dom";
+import DateSelector from "./components/DateSelector";
+import Timeline from "./components/Timeline";
+import WorkNode from "./components/Node";
+import ContentWindow from "./components/ContentWindow";
+import client, { ContentModel } from "./contentful";
+import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
+const defaultStartDate = DateTime.fromObject({ year: 1993 }).toISODate();
+const defaultEndDate = DateTime.now().toISODate();
 
-function App() {
+const getPosition = (
+  startDate: string,
+  endDate: string,
+  targetDate: string
+) => {
+  const totalTime = DateTime.fromISO(startDate).diff(
+    DateTime.fromISO(endDate),
+    "days"
+  ).days;
+  const startToTarget = DateTime.fromISO(startDate).diff(
+    DateTime.fromISO(targetDate),
+    "days"
+  ).days;
+  return Math.floor((startToTarget / totalTime) * 100);
+};
+
+const App = () => {
+  const [startDate, setStartDate] = useState(defaultStartDate);
+  const [endDate, setEndDate] = useState(defaultEndDate);
+  const [entries, setEntries] = useState<EntryCollection<ContentModel>>();
+  useEffect(() => {
+    client.getEntries<ContentModel>().then(setEntries).catch(console.error);
+  }, []);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+      <div className="App">
+        <DateSelector
+          onEndDateChange={setEndDate}
+          onStartDateChange={setStartDate}
+        />
+        <Timeline startDate={startDate} endDate={endDate}>
+          {entries?.items.map((entry) => {
+            if (entry?.fields) {
+              return (
+                <WorkNode
+                  to={`/work/${entry.sys.id}`}
+                  color="red"
+                  position={getPosition(
+                    startDate,
+                    endDate,
+                    entry.fields.date ?? startDate
+                  )}
+                />
+              );
+            }
+            return null;
+          })}
+        </Timeline>
+        <Route
+          path="/work/:workId"
+          render={({ history, match }) => {
+            const entry = entries?.items.find(
+              (entry) => entry.sys.id === match.params.workId
+            );
+            if (!entry) return null;
+            return (
+              <ContentWindow onCloseClick={() => history.push("/")}>
+                <h1>{entry.fields.workTitle}</h1>
+                {entry.fields.title
+                  ? documentToReactComponents(entry.fields.title)
+                  : null}
+              </ContentWindow>
+            );
+          }}
+        />
+      </div>
+    </BrowserRouter>
   );
-}
+};
 
 export default App;
