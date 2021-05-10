@@ -1,0 +1,27 @@
+{
+  "files": {
+    "main.css": "/kh/static/css/main.8d48207c.chunk.css",
+    "main.js": "/kh/static/js/main.fa5b0bad.chunk.js",
+    "main.js.map": "/kh/static/js/main.fa5b0bad.chunk.js.map",
+    "runtime-main.js": "/kh/static/js/runtime-main.03eb2aca.js",
+    "runtime-main.js.map": "/kh/static/js/runtime-main.03eb2aca.js.map",
+    "static/css/2.028e56f8.chunk.css": "/kh/static/css/2.028e56f8.chunk.css",
+    "static/js/2.32ef0eb8.chunk.js": "/kh/static/js/2.32ef0eb8.chunk.js",
+    "static/js/2.32ef0eb8.chunk.js.map": "/kh/static/js/2.32ef0eb8.chunk.js.map",
+    "static/js/3.6f0e83df.chunk.js": "/kh/static/js/3.6f0e83df.chunk.js",
+    "static/js/3.6f0e83df.chunk.js.map": "/kh/static/js/3.6f0e83df.chunk.js.map",
+    "index.html": "/kh/index.html",
+    "static/css/2.028e56f8.chunk.css.map": "/kh/static/css/2.028e56f8.chunk.css.map",
+    "static/css/main.8d48207c.chunk.css.map": "/kh/static/css/main.8d48207c.chunk.css.map",
+    "static/js/2.32ef0eb8.chunk.js.LICENSE.txt": "/kh/static/js/2.32ef0eb8.chunk.js.LICENSE.txt",
+    "static/media/bg.1432983d.jpeg": "/kh/static/media/bg.1432983d.jpeg",
+    "static/media/index.css": "/kh/static/media/mononoki-Regular.d97fab44.woff2"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.03eb2aca.js",
+    "static/css/2.028e56f8.chunk.css",
+    "static/js/2.32ef0eb8.chunk.js",
+    "static/css/main.8d48207c.chunk.css",
+    "static/js/main.fa5b0bad.chunk.js"
+  ]
+}
