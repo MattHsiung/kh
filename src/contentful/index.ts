@@ -1,3 +1,4 @@
+import { Asset, AssetCollection } from "contentful";
 import * as contentful from "contentful";
 import { Document } from "@contentful/rich-text-types";
 
@@ -12,4 +13,5 @@ export type ContentModel = {
   date?: string;
   title?: Document;
   workTitle: string;
+  images: Array<Asset>;
 };

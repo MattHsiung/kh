@@ -1,8 +1,9 @@
-import { EntryCollection } from "contentful";
+import { Asset, EntryCollection } from "contentful";
 import { DateTime } from "luxon";
 import React, { useEffect, useState } from "react";
 import "./App.css";
 import { BrowserRouter, Route } from "react-router-dom";
+import Carousel, { Item } from "./components/Carousel";
 import DateSelector from "./components/DateSelector";
 import Timeline from "./components/Timeline";
 import WorkNode from "./components/Node";
@@ -27,7 +28,7 @@ const getPosition = (
   ).days;
   return Math.floor((startToTarget / totalTime) * 100);
 };
-
+const formatAssetUrl = (url: string) => `${url}?w=400`;
 const App = () => {
   const [startDate, setStartDate] = useState(defaultStartDate);
   const [endDate, setEndDate] = useState(defaultEndDate);
@@ -48,6 +49,7 @@ const App = () => {
               return (
                 <WorkNode
                   to={`/work/${entry.sys.id}`}
+                  key={entry.sys.id}
                   color="red"
                   position={getPosition(
                     startDate,
@@ -67,9 +69,28 @@ const App = () => {
               (entry) => entry.sys.id === match.params.workId
             );
             if (!entry) return null;
+            const assets = entry.fields.images.map((image) => {
+              const asset = entries?.includes.Asset as Array<Asset>;
+              return asset.find(
+                (asset: Asset) => asset.sys.id === image.sys.id
+              );
+            });
             return (
               <ContentWindow onCloseClick={() => history.push("/")}>
                 <h1>{entry.fields.workTitle}</h1>
+                <Carousel>
+                  {assets.map((asset) =>
+                    asset ? (
+                      <Item>
+                        <img
+                          key={asset.sys.id}
+                          src={formatAssetUrl(asset.fields.file.url)}
+                          alt={asset.fields.file.fileName}
+                        />
+                      </Item>
+                    ) : null
+                  )}
+                </Carousel>
                 {entry.fields.title
                   ? documentToReactComponents(entry.fields.title)
                   : null}
