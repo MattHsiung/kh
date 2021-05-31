@@ -1,27 +1,27 @@
 {
   "files": {
-    "main.css": "/kh/static/css/main.8d48207c.chunk.css",
-    "main.js": "/kh/static/js/main.0544ee6a.chunk.js",
-    "main.js.map": "/kh/static/js/main.0544ee6a.chunk.js.map",
-    "runtime-main.js": "/kh/static/js/runtime-main.03eb2aca.js",
-    "runtime-main.js.map": "/kh/static/js/runtime-main.03eb2aca.js.map",
-    "static/css/2.028e56f8.chunk.css": "/kh/static/css/2.028e56f8.chunk.css",
-    "static/js/2.1eaa49b7.chunk.js": "/kh/static/js/2.1eaa49b7.chunk.js",
-    "static/js/2.1eaa49b7.chunk.js.map": "/kh/static/js/2.1eaa49b7.chunk.js.map",
-    "static/js/3.6f0e83df.chunk.js": "/kh/static/js/3.6f0e83df.chunk.js",
-    "static/js/3.6f0e83df.chunk.js.map": "/kh/static/js/3.6f0e83df.chunk.js.map",
-    "index.html": "/kh/index.html",
-    "static/css/2.028e56f8.chunk.css.map": "/kh/static/css/2.028e56f8.chunk.css.map",
-    "static/css/main.8d48207c.chunk.css.map": "/kh/static/css/main.8d48207c.chunk.css.map",
-    "static/js/2.1eaa49b7.chunk.js.LICENSE.txt": "/kh/static/js/2.1eaa49b7.chunk.js.LICENSE.txt",
-    "static/media/bg.1432983d.jpeg": "/kh/static/media/bg.1432983d.jpeg",
-    "static/media/index.css": "/kh/static/media/mononoki-Regular.d97fab44.woff2"
+    "main.css": "https://www.kohlman-harshbarger.com/static/css/main.c2a1275d.chunk.css",
+    "main.js": "https://www.kohlman-harshbarger.com/static/js/main.0544ee6a.chunk.js",
+    "main.js.map": "https://www.kohlman-harshbarger.com/static/js/main.0544ee6a.chunk.js.map",
+    "runtime-main.js": "https://www.kohlman-harshbarger.com/static/js/runtime-main.d960e2c4.js",
+    "runtime-main.js.map": "https://www.kohlman-harshbarger.com/static/js/runtime-main.d960e2c4.js.map",
+    "static/css/2.028e56f8.chunk.css": "https://www.kohlman-harshbarger.com/static/css/2.028e56f8.chunk.css",
+    "static/js/2.840de07c.chunk.js": "https://www.kohlman-harshbarger.com/static/js/2.840de07c.chunk.js",
+    "static/js/2.840de07c.chunk.js.map": "https://www.kohlman-harshbarger.com/static/js/2.840de07c.chunk.js.map",
+    "static/js/3.6f0e83df.chunk.js": "https://www.kohlman-harshbarger.com/static/js/3.6f0e83df.chunk.js",
+    "static/js/3.6f0e83df.chunk.js.map": "https://www.kohlman-harshbarger.com/static/js/3.6f0e83df.chunk.js.map",
+    "index.html": "https://www.kohlman-harshbarger.com/index.html",
+    "static/css/2.028e56f8.chunk.css.map": "https://www.kohlman-harshbarger.com/static/css/2.028e56f8.chunk.css.map",
+    "static/css/main.c2a1275d.chunk.css.map": "https://www.kohlman-harshbarger.com/static/css/main.c2a1275d.chunk.css.map",
+    "static/js/2.840de07c.chunk.js.LICENSE.txt": "https://www.kohlman-harshbarger.com/static/js/2.840de07c.chunk.js.LICENSE.txt",
+    "static/media/bg.1432983d.jpeg": "https://www.kohlman-harshbarger.com/static/media/bg.1432983d.jpeg",
+    "static/media/index.css": "https://www.kohlman-harshbarger.com/static/media/mononoki-Regular.d97fab44.woff2"
   },
   "entrypoints": [
-    "static/js/runtime-main.03eb2aca.js",
+    "static/js/runtime-main.d960e2c4.js",
     "static/css/2.028e56f8.chunk.css",
-    "static/js/2.1eaa49b7.chunk.js",
-    "static/css/main.8d48207c.chunk.css",
+    "static/js/2.840de07c.chunk.js",
+    "static/css/main.c2a1275d.chunk.css",
     "static/js/main.0544ee6a.chunk.js"
   ]
 }
